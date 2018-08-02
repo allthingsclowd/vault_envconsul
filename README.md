@@ -22,11 +22,10 @@ curl -u allthingsclowd:${REPOTOKEN} https://api.github.com/user/repos -d '{"name
 git remote add mynewreponame git@github.com:allthingsclowd/mynewreponame.git
 git push -u mynewreponame master
 ```
-```
-
-Finally you can download and start working on your new templated repository as follows
 
 - __STEP 3__
+
+Finally you can download and start working on your new templated repository as follows
 
 ``` bash
 git clone git@github.com:allthingsclowd/mynewreponame.git
