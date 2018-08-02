@@ -13,9 +13,15 @@ Then push this up to your new repository on github
 
 - __STEP 2__
 
+If using 2-Factor authentication on github you'll need to setup a [Personal Access Token.](https://blog.github.com/2013-05-16-personal-api-tokens/)
+
+This is what I've stored in REPOTOKEN below
+
 ``` bash
+curl -u allthingsclowd:${REPOTOKEN} https://api.github.com/user/repos -d '{"name":"mynewreponame"}'
 git remote add mynewreponame git@github.com:allthingsclowd/mynewreponame.git
 git push -u mynewreponame master
+```
 ```
 
 Finally you can download and start working on your new templated repository as follows
