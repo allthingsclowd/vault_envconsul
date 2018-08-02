@@ -32,7 +32,7 @@ git clone git@github.com:allthingsclowd/mynewreponame.git
 cd mynewreponame
 ```
 
-All you need to do now is tedy this ReadMe and remove these instructions and fill in the blanks below.
+All you need to do now is edit this ReadMe. Remove these instructions and fill in the blanks below.
 
 
 # Title Here
