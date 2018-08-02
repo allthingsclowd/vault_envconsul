@@ -1,19 +1,19 @@
-# Base Template for project work
+# Github base template for new project work
 
 To use this base template for you own projects clone this repo to your desktop.
 
-- __STEP 1__ (Only need to do this once for your workstation)
+- __STEP 1__ (Only need to do this once per workstation)
 
 ``` bash
 git clone git@github.com:allthingsclowd/base.git
 cd base
 ```
 
-Then push this up to your new repository on github
-
 - __STEP 2__
 
-## Manual Option - creation of a Personal Access Token
+Create your new project repository.
+
+#### Manual Option - creation of a Personal Access Token
 If using 2-Factor authentication on github you'll need to setup a [Personal Access Token.](https://blog.github.com/2013-05-16-personal-api-tokens/)
 
 This is what I've stored in REPOTOKEN below
@@ -23,7 +23,10 @@ curl -u allthingsclowd:${REPOTOKEN} https://api.github.com/user/repos -d '{"name
 git remote add mynewreponame git@github.com:allthingsclowd/mynewreponame.git
 git push -u mynewreponame master
 ```
-## Modern Option - Introducing [hub.github.com](https://hub.github.com/)
+
+                          _OR_
+
+#### Modern Option - Introducing [hub.github.com](https://hub.github.com/)
 
 You'll need to install this tool from github.com and it will improve your productivity over time.
 
@@ -35,10 +38,8 @@ There's a first time use penalty where it configures the above Personal Access T
 
 ``` bash
 hub create -d "My Awesome new repo" mynewreponame
-github.com username: allthingsclowd
-github.com password for allthingsclowd (never stored):
-two-factor authentication code: 672707
-https://github.com/allthingsclowd/mynewreponame
+git remote add mynewreponame git@github.com:allthingsclowd/mynewreponame.git
+git push -u mynewreponame master
 ```
 Future __hub create__ commands will leverage the newly created PAT token created for your workstation from the initial run.
 
