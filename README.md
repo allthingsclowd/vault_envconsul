@@ -24,7 +24,7 @@ git remote add mynewreponame git@github.com:allthingsclowd/mynewreponame.git
 git push -u mynewreponame master
 ```
 
-                          _OR_
+_OR_
 
 #### Modern Option - Introducing [hub.github.com](https://hub.github.com/)
 
