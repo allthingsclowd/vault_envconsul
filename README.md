@@ -13,6 +13,7 @@ Then push this up to your new repository on github
 
 - __STEP 2__
 
+## Manual Option - creation of a Personal Access Token
 If using 2-Factor authentication on github you'll need to setup a [Personal Access Token.](https://blog.github.com/2013-05-16-personal-api-tokens/)
 
 This is what I've stored in REPOTOKEN below
@@ -22,6 +23,24 @@ curl -u allthingsclowd:${REPOTOKEN} https://api.github.com/user/repos -d '{"name
 git remote add mynewreponame git@github.com:allthingsclowd/mynewreponame.git
 git push -u mynewreponame master
 ```
+## Modern Option - Introducing [hub.github.com](https://hub.github.com/)
+
+You'll need to install this tool from github.com and it will improve your productivity over time.
+
+On a macbook
+``` bash
+brew install hub
+```
+There's a first time use penalty where it configures the above Personal Access Token for you, once this is complete however it should be plain sailing.
+
+``` bash
+hub create -d "My Awesome new repo" mynewreponame
+github.com username: allthingsclowd
+github.com password for allthingsclowd (never stored):
+two-factor authentication code: 672707
+https://github.com/allthingsclowd/mynewreponame
+```
+Future __hub create__ commands will leverage the newly created PAT token created for your workstation from the initial run.
 
 - __STEP 3__
 
