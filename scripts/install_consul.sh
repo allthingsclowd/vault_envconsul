@@ -8,6 +8,7 @@ CIDR=`ip addr show ${IFACE} | awk '$2 ~ "192.168.2" {print $2}'`
 IP=${CIDR%%/24}
 
 if [ -d /vagrant ]; then
+  mkdir -p /vagrant/logs
   LOG="/vagrant/logs/consul_${HOSTNAME}.log"
 else
   LOG="consul.log"

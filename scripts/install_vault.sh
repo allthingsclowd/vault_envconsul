@@ -45,15 +45,4 @@ if [[ "${HOSTNAME}" =~ "leader" ]] || [ "${TRAVIS}" == "true" ]; then
   sudo find / -name '.vault-token' -exec cp {} /usr/local/bootstrap/.vault-token \; -quit
   sudo chmod ugo+r /usr/local/bootstrap/.vault-token
 
- 
-  # Generate Test Secret
-  TESTSECRET=`openssl rand -base64 32`
-
-  sudo VAULT_ADDR="http://${IP}:8200" vault kv put secret/COMPANYDATABASE/PASSWORD value=${TESTSECRET}
-  sudo VAULT_ADDR="http://${IP}:8200" vault kv get secret/COMPANYDATABASE/PASSWORD
-
-  # Try reading back secret using envconsul
-  envconsul -secret secret/COMPANYDATABASE env
-
-
 fi

@@ -1,0 +1,72 @@
+==> Starting Consul agent...
+==> Consul agent running!
+           Version: 'v1.2.2'
+           Node ID: '9ebc19fd-c4c3-a08b-f455-abbc0256cc1c'
+         Node name: 'leader01'
+        Datacenter: 'dc1' (Segment: '<all>')
+            Server: true (Bootstrap: true)
+       Client Addr: [0.0.0.0] (HTTP: 8500, HTTPS: -1, DNS: 8600)
+      Cluster Addr: 192.168.2.11 (LAN: 8301, WAN: 8302)
+           Encrypt: Gossip: false, TLS-Outgoing: false, TLS-Incoming: false
+
+==> Log data will now stream in as it occurs:
+
+    2018/08/05 15:28:13 [INFO] raft: Initial configuration (index=1): [{Suffrage:Voter ID:9ebc19fd-c4c3-a08b-f455-abbc0256cc1c Address:192.168.2.11:8300}]
+    2018/08/05 15:28:13 [INFO] raft: Node at 192.168.2.11:8300 [Follower] entering Follower state (Leader: "")
+    2018/08/05 15:28:13 [INFO] serf: EventMemberJoin: leader01.dc1 192.168.2.11
+    2018/08/05 15:28:13 [INFO] serf: EventMemberJoin: leader01 192.168.2.11
+    2018/08/05 15:28:13 [INFO] agent: Started DNS server 0.0.0.0:8600 (udp)
+    2018/08/05 15:28:13 [INFO] consul: Adding LAN server leader01 (Addr: tcp/192.168.2.11:8300) (DC: dc1)
+    2018/08/05 15:28:13 [INFO] consul: Handled member-join event for server "leader01.dc1" in area "wan"
+    2018/08/05 15:28:13 [WARN] agent/proxy: running as root, will not start managed proxies
+    2018/08/05 15:28:13 [INFO] agent: Started DNS server 0.0.0.0:8600 (tcp)
+    2018/08/05 15:28:13 [INFO] agent: Started HTTP server on [::]:8500 (tcp)
+    2018/08/05 15:28:13 [INFO] agent: started state syncer
+    2018/08/05 15:28:20 [WARN] raft: Heartbeat timeout from "" reached, starting election
+    2018/08/05 15:28:20 [INFO] raft: Node at 192.168.2.11:8300 [Candidate] entering Candidate state in term 2
+    2018/08/05 15:28:20 [INFO] raft: Election won. Tally: 1
+    2018/08/05 15:28:20 [INFO] raft: Node at 192.168.2.11:8300 [Leader] entering Leader state
+    2018/08/05 15:28:20 [INFO] consul: cluster leadership acquired
+    2018/08/05 15:28:20 [INFO] consul: New leader elected: leader01
+    2018/08/05 15:28:20 [INFO] consul: member 'leader01' joined, marking health alive
+    2018/08/05 15:28:20 [INFO] agent: Synced node info
+    2018/08/05 15:30:30 [INFO] agent: Synced service "vault:192.168.2.11:8200"
+    2018/08/05 15:30:30 [INFO] agent: Synced check "vault:192.168.2.11:8200:vault-sealed-check"
+    2018/08/05 15:30:30 [INFO] agent: Synced check "vault:192.168.2.11:8200:vault-sealed-check"
+    2018/08/05 15:30:30 [INFO] agent: Synced service "vault:192.168.2.11:8200"
+    2018/08/05 15:30:31 [INFO] agent: Synced check "vault:192.168.2.11:8200:vault-sealed-check"
+    2018/08/05 15:36:29 [INFO] agent: Deregistered service "vault:192.168.2.11:8200"
+    2018/08/05 15:36:29 [INFO] agent: Deregistered check "vault:192.168.2.11:8200:vault-sealed-check"
+    2018/08/05 15:36:30 [INFO] agent: Synced service "vault:192.168.2.11:8200"
+    2018/08/05 15:36:30 [INFO] agent: Synced check "vault:192.168.2.11:8200:vault-sealed-check"
+    2018/08/05 15:36:30 [INFO] agent: Synced check "vault:192.168.2.11:8200:vault-sealed-check"
+    2018/08/05 15:36:30 [INFO] agent: Synced service "vault:192.168.2.11:8200"
+    2018/08/05 15:36:30 [INFO] agent: Synced check "vault:192.168.2.11:8200:vault-sealed-check"
+    2018/08/05 15:39:22 [INFO] agent: Deregistered service "vault:192.168.2.11:8200"
+    2018/08/05 15:39:22 [INFO] agent: Deregistered check "vault:192.168.2.11:8200:vault-sealed-check"
+    2018/08/05 15:39:22 [INFO] agent: Synced service "vault:192.168.2.11:8200"
+    2018/08/05 15:39:22 [INFO] agent: Synced check "vault:192.168.2.11:8200:vault-sealed-check"
+    2018/08/05 15:39:22 [INFO] agent: Synced check "vault:192.168.2.11:8200:vault-sealed-check"
+    2018/08/05 15:39:22 [INFO] agent: Synced service "vault:192.168.2.11:8200"
+    2018/08/05 15:39:22 [INFO] agent: Synced check "vault:192.168.2.11:8200:vault-sealed-check"
+    2018/08/05 15:41:00 [INFO] agent: Deregistered service "vault:192.168.2.11:8200"
+    2018/08/05 15:41:00 [INFO] agent: Deregistered check "vault:192.168.2.11:8200:vault-sealed-check"
+    2018/08/05 15:41:00 [INFO] agent: Synced service "vault:192.168.2.11:8200"
+    2018/08/05 15:41:00 [INFO] agent: Synced check "vault:192.168.2.11:8200:vault-sealed-check"
+    2018/08/05 15:41:01 [INFO] agent: Synced check "vault:192.168.2.11:8200:vault-sealed-check"
+    2018/08/05 15:41:01 [INFO] agent: Synced service "vault:192.168.2.11:8200"
+    2018/08/05 15:41:01 [INFO] agent: Synced check "vault:192.168.2.11:8200:vault-sealed-check"
+    2018/08/05 15:46:27 [INFO] agent: Deregistered service "vault:192.168.2.11:8200"
+    2018/08/05 15:46:27 [INFO] agent: Deregistered check "vault:192.168.2.11:8200:vault-sealed-check"
+    2018/08/05 15:46:27 [INFO] agent: Synced service "vault:192.168.2.11:8200"
+    2018/08/05 15:46:27 [INFO] agent: Synced check "vault:192.168.2.11:8200:vault-sealed-check"
+    2018/08/05 15:46:27 [INFO] agent: Synced check "vault:192.168.2.11:8200:vault-sealed-check"
+    2018/08/05 15:46:28 [INFO] agent: Synced service "vault:192.168.2.11:8200"
+    2018/08/05 15:46:28 [INFO] agent: Synced check "vault:192.168.2.11:8200:vault-sealed-check"
+    2018/08/05 15:47:49 [INFO] agent: Deregistered service "vault:192.168.2.11:8200"
+    2018/08/05 15:47:49 [INFO] agent: Deregistered check "vault:192.168.2.11:8200:vault-sealed-check"
+    2018/08/05 15:47:49 [INFO] agent: Synced service "vault:192.168.2.11:8200"
+    2018/08/05 15:47:49 [INFO] agent: Synced check "vault:192.168.2.11:8200:vault-sealed-check"
+    2018/08/05 15:47:49 [INFO] agent: Synced check "vault:192.168.2.11:8200:vault-sealed-check"
+    2018/08/05 15:47:49 [INFO] agent: Synced service "vault:192.168.2.11:8200"
+    2018/08/05 15:47:49 [INFO] agent: Synced check "vault:192.168.2.11:8200:vault-sealed-check"
