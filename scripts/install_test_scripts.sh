@@ -11,9 +11,18 @@ TESTSECRET=`openssl rand -base64 32`
 cat /usr/local/bootstrap/.vault-token | sudo VAULT_ADDR="http://${IP}:8200" vault login - 
 
 
-sudo VAULT_ADDR="http://${IP}:8200" vault kv put secret/COMPANYDATABASE/PASSWORD value=${TESTSECRET}
-sudo VAULT_ADDR="http://${IP}:8200" vault kv get secret/COMPANYDATABASE/PASSWORD
+sudo VAULT_ADDR="http://${IP}:8200" vault write secret/COMPANYDATABASE PASSWORD=${TESTSECRET}
+sudo VAULT_ADDR="http://${IP}:8200" vault read secret/COMPANYDATABASE/PASSWORD
+
+export VAULT_ADDR="http://${IP}:8200"
+export VAULT_TOKEN=`cat /usr/local/bootstrap/.vault-token`
+# curl \
+#     --location \
+#     --header "X-Vault-Token: ${VAULT_TOKEN}" \
+#     --request POST \
+#     --data "{ \"data\" : { \"PASSWORD\" : \"${TESTSECRET}\" } }" \
+#     ${VAULT_ADDR}/v1/secret/data/COMPANYDATABASE
 
 # Try reading back secret using envconsul
-export VAULT_TOKEN=`cat /usr/local/bootstrap/.vault-token`
-sudo VAULT_TOKEN=`cat /usr/local/bootstrap/.vault-token` VAULT_ADDR="http://${IP}:8200" envconsul -once -secret secret/COMPANYDATABASE/PASSWORD env
+
+sudo VAULT_TOKEN=`cat /usr/local/bootstrap/.vault-token` VAULT_ADDR="http://${IP}:8200" envconsul -once -secret secret/COMPANYDATABASE env
